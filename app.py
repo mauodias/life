@@ -16,7 +16,7 @@ while running:
 
     screen.fill((0,0,0))
 
-    pygame.draw.circle(screen, (0,255,0), (cell.x, cell.y), 10)
+    pygame.draw.circle(screen, cell.color, cell.position, cell.size)
 
     pygame.display.flip()
 
