@@ -35,3 +35,6 @@ class Cell:
     @property
     def color(self):
         return self._color.value
+
+    def walk(self):
+        self.y += 1
