@@ -18,7 +18,13 @@ class Cell:
 
     @x.setter
     def x(self, value):
-        self._x = value
+        newpos = value
+        width = self._screen.get_width() - self.size
+        if value > width:
+            newpos = width
+        elif value < self.size:
+            newpos = self.size
+        self._x = newpos
 
     @property
     def y(self):
@@ -26,7 +32,13 @@ class Cell:
 
     @y.setter
     def y(self, value):
-        self._y = value
+        newpos = value
+        height = self._screen.get_height() - self.size
+        if value > height:
+            newpos = height
+        elif value < self.size:
+            newpos = self.size
+        self._y = newpos
 
     @property
     def position(self):
@@ -44,7 +56,7 @@ class Cell:
     def speed(self):
         return self._speed
 
-    def walk(self, angle=0):
+    def walk(self, angle=90):
         self.x += math.cos(math.radians(angle))*self.speed
         self.y += math.sin(math.radians(angle))*self.speed
 
