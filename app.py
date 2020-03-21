@@ -20,6 +20,6 @@ while running:
 
     pygame.display.flip()
 
-    cell.walk()
+    cell.walk(30)
 
 pygame.quit()

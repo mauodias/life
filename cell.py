@@ -1,12 +1,14 @@
 from color import Color
+import math
 
 class Cell:
 
-    def __init__(self, x=0, y=0, size=10, color=Color.BLUE):
+    def __init__(self, x=0, y=0, size=10, color=Color.BLUE, speed=1):
         self._x = x
         self._y = y
         self._size = size
         self._color = color
+        self._speed = speed
 
     @property
     def x(self):
@@ -36,5 +38,10 @@ class Cell:
     def color(self):
         return self._color.value
 
-    def walk(self):
-        self.y += 1
+    @property
+    def speed(self):
+        return self._speed
+
+    def walk(self, angle=0):
+        self.x += math.cos(math.radians(angle))*self.speed
+        self.y += math.sin(math.radians(angle))*self.speed
