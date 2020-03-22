@@ -7,8 +7,8 @@ screen = pygame.display.set_mode([500, 500])
 
 running = True
 
-cell = Cell(screen, x=250, y=250)
-cell2 = Cell(screen, x=250, y=250, speed=-1)
+cell = Cell(screen, x=10, y=250)
+cell2 = Cell(screen, x=490, y=250, speed=-1)
 
 while running:
     for event in pygame.event.get():

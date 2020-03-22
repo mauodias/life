@@ -56,7 +56,7 @@ class Cell:
     def speed(self):
         return self._speed
 
-    def walk(self, angle=90):
+    def walk(self, angle=0):
         self.x += math.cos(math.radians(angle))*self.speed
         self.y += math.sin(math.radians(angle))*self.speed
 
